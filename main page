@@ -1,0 +1,17 @@
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NeuroMeal</title>
+</head>
+
+<body>
+    <h1>NeuroMeal</h1>
+    <h2>Where food, medicine, and the brain intersect.</h2>
+
+    <p>
+        NeuroMeal is an educational project exploring the science
+        behind food, medications, and neuroscience.
+    </p>
+</body>
+</html>
