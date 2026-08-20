@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medications | NeuroMeal</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header class="site-header">
+
+        <a href="index.html" class="logo">
+            NeuroMeal
+        </a>
+
+        <nav class="navigation">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="articles.html">
+                Articles
+            </a>
+
+            <a href="medications.html" class="active">
+                Medications
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- PAGE HEADER -->
+
+        <section class="page-header">
+
+            <p class="eyebrow">
+                THE NEUROMEAL DATABASE
+            </p>
+
+            <h1>
+                Medications
+            </h1>
+
+            <p>
+                Explore the relationship between medications, food,
+                and the biology behind drug interactions.
+            </p>
+
+        </section>
+
+
+        <!-- MEDICATION SEARCH -->
+
+        <section class="medication-search">
+
+            <div class="search-container">
+
+                <label for="medicationSearch">
+                    Search for a medication
+                </label>
+
+                <input
+                    type="search"
+                    id="medicationSearch"
+                    placeholder="Type a medication..."
+                >
+
+            </div>
+
+
+            <div class="medication-options">
+
+                <button onclick="selectMedication('sertraline')">
+                    Sertraline
+                </button>
+
+                <button onclick="selectMedication('warfarin')">
+                    Warfarin
+                </button>
+
+                <button onclick="selectMedication('simvastatin')">
+                    Simvastatin
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULTS -->
+
+        <section
+            id="medicationResult"
+            class="medication-result"
+        >
+
+            <div class="empty-state">
+
+                <div class="empty-icon">
+                    💊
+                </div>
+
+                <h2>
+                    Select a medication
+                </h2>
+
+                <p>
+                    Search for a medication above to explore its
+                    food interactions and pharmacology.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="footer-logo">
+            NeuroMeal
+        </div>
+
+        <p>
+            Food × Medicine × Neuroscience
+        </p>
+
+        <p class="footer-small">
+            An independent educational project.
+        </p>
+
+    </footer>
+
+
+    <!-- MEDICATION DATABASE -->
+
+    <script>
+
+        const medications = {
+
+            sertraline: {
+
+                name: "Sertraline",
+
+                class: "SSRI antidepressant",
+
+                simple:
+                    "Sertraline is a medication that primarily works by increasing the availability of serotonin signaling in the brain.",
+
+                food:
+                    "Food can affect how some medications are absorbed, although the clinically important interactions for an individual medication depend on the medication and its labeling.",
+
+                biology:
+                    "Sertraline primarily affects serotonin signaling by inhibiting the serotonin transporter, which normally helps remove serotonin from the space between neurons.",
+
+                deep:
+                    "At the pharmacological level, sertraline acts primarily as a selective serotonin reuptake inhibitor. Its effects involve modulation of serotonin transporter activity and downstream changes in serotonergic signaling.",
+
+                interactions:
+                    "Specific food and medication considerations should be evaluated using current official medication information and authoritative sources."
+
+            },
+
+
+            warfarin: {
+
+                name: "Warfarin",
+
+                class: "Anticoagulant",
+
+                simple:
+                    "Warfarin reduces the body's ability to form blood clots by interfering with vitamin K-dependent clotting processes.",
+
+                food:
+                    "Foods containing vitamin K can affect warfarin therapy. Consistency in dietary vitamin K intake is important because changes can alter the medication's anticoagulant effect.",
+
+                biology:
+                    "Vitamin K is required for the production of several clotting factors. Warfarin interferes with vitamin K recycling, reducing the availability of active vitamin K for those processes.",
+
+                deep:
+                    "Warfarin inhibits vitamin K epoxide reductase complex subunit 1 (VKORC1), reducing regeneration of reduced vitamin K and consequently decreasing gamma-carboxylation of vitamin K-dependent coagulation factors.",
+
+                interactions:
+                    "Leafy green vegetables and other vitamin K-containing foods are particularly relevant to warfarin therapy. The appropriate dietary approach is individualized and should be discussed with a healthcare professional."
+
+            },
+
+
+            simvastatin: {
+
+                name: "Simvastatin",
+
+                class: "Statin",
+
+                simple:
+                    "Simvastatin helps lower cholesterol by reducing the liver's production of cholesterol.",
+
+                food:
+                    "Grapefruit and grapefruit juice can interact with certain medications that are metabolized through CYP3A4, including simvastatin.",
+
+                biology:
+                    "Grapefruit contains compounds that can inhibit intestinal CYP3A4. This enzyme normally contributes to the metabolism of certain medications before they reach systemic circulation.",
+
+                deep:
+                    "Inhibition of intestinal CYP3A4 can decrease presystemic metabolism of susceptible CYP3A4 substrates, potentially increasing systemic exposure. The magnitude of an interaction varies by medication and individual circumstances.",
+
+                interactions:
+                    "Grapefruit is a well-established food consideration for simvastatin. Always refer to current official medication labeling and a healthcare professional for personal guidance."
+
+            }
+
+        };
+
+
+        const searchInput =
+            document.getElementById("medicationSearch");
+
+        const result =
+            document.getElementById("medicationResult");
+
+
+        function selectMedication(medicationKey) {
+
+            const medication =
+                medications[medicationKey];
+
+            if (!medication) {
+                return;
+            }
+
+            searchInput.value =
+                medication.name;
+
+            displayMedication(medication);
+
+        }
+
+
+        function displayMedication(medication) {
+
+            result.innerHTML = `
+
+                <div class="medication-header">
+
+                    <p class="eyebrow">
+                        MEDICATION PROFILE
+                    </p>
+
+                    <h2>
+                        ${medication.name}
+                    </h2>
+
+                    <p class="medication-class">
+                        ${medication.class}
+                    </p>
+
+                </div>
+
+
+                <div class="information-level simple-level">
+
+                    <span class="level-label">
+                        01 · THE SIMPLE VERSION
+                    </span>
+
+                    <h3>
+                        What does it do?
+                    </h3>
+
+                    <p>
+                        ${medication.simple}
+                    </p>
+
+                </div>
+
+
+                <div class="information-level">
+
+                    <span class="level-label">
+                        02 · FOOD & MEDICATION
+                    </span>
+
+                    <h3>
+                        What about food?
+                    </h3>
+
+                    <p>
+                        ${medication.food}
+                    </p>
+
+                </div>
+
+
+                <div class="information-level">
+
+                    <span class="level-label">
+                        03 · THE BIOLOGY
+                    </span>
+
+                    <h3>
+                        What's happening biologically?
+                    </h3>
+
+                    <p>
+                        ${medication.biology}
+                    </p>
+
+                </div>
+
+
+                <div class="information-level deep-level">
+
+                    <span class="level-label">
+                        04 · THE DEEP DIVE
+                    </span>
+
+                    <h3>
+                        The pharmacology
+                    </h3>
+
+                    <p>
+                        ${medication.deep}
+                    </p>
+
+                </div>
+
+
+                <div class="interaction-note">
+
+                    <h3>
+                        Important considerations
+                    </h3>
+
+                    <p>
+                        ${medication.interactions}
+                    </p>
+
+                </div>
+
+
+                <div class="source-placeholder">
+
+                    <h3>
+                        📚 Sources
+                    </h3>
+
+                    <p>
+                        Sources will be added to each medication profile
+                        as the NeuroMeal database is researched and developed.
+                    </p>
+
+                </div>
+
+            `;
+
+        }
+
+
+        searchInput.addEventListener("input", function () {
+
+            const searchTerm =
+                searchInput.value.toLowerCase().trim();
+
+            const medicationKeys =
+                Object.keys(medications);
+
+            const matchingKey =
+                medicationKeys.find(function (key) {
+
+                    return medications[key]
+                        .name
+                        .toLowerCase()
+                        .includes(searchTerm);
+
+                });
+
+
+            if (matchingKey) {
+
+                displayMedication(
+                    medications[matchingKey]
+                );
+
+            } else if (searchTerm === "") {
+
+                result.innerHTML = `
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            💊
+                        </div>
+
+                        <h2>
+                            Select a medication
+                        </h2>
+
+                        <p>
+                            Search for a medication above to explore
+                            its food interactions and pharmacology.
+                        </p>
+
+                    </div>
+
+                `;
+
+            } else {
+
+                result.innerHTML = `
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            🔎
+                        </div>
+
+                        <h2>
+                            Medication not found
+                        </h2>
+
+                        <p>
+                            This medication isn't in the NeuroMeal
+                            database yet.
+                        </p>
+
+                    </div>
+
+                `;
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
