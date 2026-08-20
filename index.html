@@ -6,258 +6,65 @@
 
     <title>NeuroMeal | Food, Medicine & the Brain</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f7f4;
-            color: #24302a;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: #ffffff;
-            border-bottom: 1px solid #dce3de;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #315c4b;
-        }
-
-        nav a {
-            color: #40544a;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 15px;
-        }
-
-        nav a:hover {
-            color: #315c4b;
-        }
-
-        .hero {
-            padding: 100px 8%;
-            text-align: center;
-            background: linear-gradient(
-                135deg,
-                #e9f1ec,
-                #f8faf8
-            );
-        }
-
-        .hero h1 {
-            font-size: 64px;
-            color: #315c4b;
-            margin-bottom: 15px;
-        }
-
-        .hero h2 {
-            font-size: 25px;
-            font-weight: normal;
-            color: #50645a;
-            margin-bottom: 25px;
-        }
-
-        .hero p {
-            max-width: 650px;
-            margin: 0 auto 35px;
-            font-size: 18px;
-            color: #53635b;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 13px 25px;
-            background-color: #315c4b;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-        }
-
-        .button:hover {
-            background-color: #244638;
-        }
-
-        section {
-            padding: 70px 8%;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        section h2 {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 15px;
-            color: #315c4b;
-        }
-
-        .section-intro {
-            text-align: center;
-            max-width: 650px;
-            margin: 0 auto 45px;
-            color: #637169;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 14px;
-            border: 1px solid #dce3de;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-            color: #315c4b;
-            font-size: 21px;
-        }
-
-        .card p {
-            color: #617068;
-        }
-
-        .about {
-            background-color: #e9f1ec;
-            max-width: none;
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .disclaimer {
-            background-color: #fffdf5;
-            border-top: 1px solid #eee6c9;
-            border-bottom: 1px solid #eee6c9;
-            text-align: center;
-            padding: 30px 8%;
-            color: #6c674f;
-            font-size: 14px;
-        }
-
-        footer {
-            background-color: #24302a;
-            color: #dce3de;
-            text-align: center;
-            padding: 30px;
-            font-size: 14px;
-        }
-
-        @media (max-width: 750px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav a {
-                margin: 0 8px;
-            }
-
-            .hero h1 {
-                font-size: 45px;
-            }
-
-            .hero h2 {
-                font-size: 20px;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">NeuroMeal</div>
+    <!-- NAVIGATION -->
 
-        <nav>
-            <a href="#explore">Explore</a>
-            <a href="#about">About</a>
+    <header class="site-header">
+
+        <a href="index.html" class="logo">
+            NeuroMeal
+        </a>
+
+        <nav class="navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="articles.html">Articles</a>
+            <a href="medications.html">Medications</a>
+            <a href="about.html">About</a>
         </nav>
+
     </header>
 
+
+    <!-- HERO -->
 
     <main>
 
         <section class="hero">
-            <h1>NeuroMeal</h1>
 
-            <h2>Where food, medicine, and the brain intersect.</h2>
+            <div class="hero-content">
 
-            <p>
-                Explore the biology behind food and medication interactions,
-                from drug metabolism to neurotransmitters and the
-                blood-brain barrier.
-            </p>
+                <p class="eyebrow">
+                    FOOD × MEDICINE × NEUROSCIENCE
+                </p>
 
-            <a class="button" href="#explore">Explore the Science</a>
-        </section>
+                <h1>
+                    NeuroMeal
+                </h1>
 
+                <h2>
+                    Where food, medicine, and the brain intersect.
+                </h2>
 
-        <section id="explore">
+                <p class="hero-description">
+                    Explore the science behind food and medication
+                    interactions—from everyday explanations to the
+                    molecular biology behind them.
+                </p>
 
-            <h2>Explore NeuroMeal</h2>
+                <div class="hero-buttons">
 
-            <p class="section-intro">
-                Learn how the things we eat can interact with medications
-                and how those interactions can affect the body and brain.
-            </p>
+                    <a href="articles.html" class="button primary-button">
+                        Explore Articles
+                    </a>
 
-            <div class="cards">
+                    <a href="medications.html" class="button secondary-button">
+                        Search Medications
+                    </a>
 
-                <div class="card">
-                    <h3>🧠 Neuroscience</h3>
-
-                    <p>
-                        Discover how medications interact with
-                        neurotransmitters, receptors, neurons, and
-                        the blood-brain barrier.
-                    </p>
-                </div>
-
-
-                <div class="card">
-                    <h3>💊 Medications</h3>
-
-                    <p>
-                        Learn how common medications work, how they are
-                        processed by the body, and what can influence
-                        their effects.
-                    </p>
-                </div>
-
-
-                <div class="card">
-                    <h3>🍊 Food Interactions</h3>
-
-                    <p>
-                        Explore documented interactions between foods
-                        and medications and the biological mechanisms
-                        behind them.
-                    </p>
                 </div>
 
             </div>
@@ -265,53 +72,237 @@
         </section>
 
 
-        <section class="about" id="about">
+        <!-- RECENT ARTICLES -->
 
-            <div class="about-content">
+        <section class="articles-section">
 
-                <h2>About NeuroMeal</h2>
+            <div class="section-heading">
 
-                <p>
-                    NeuroMeal is an independent educational project
-                    exploring pharmacology, neuroscience, biology,
-                    and the relationship between food and medication.
+                <p class="eyebrow">
+                    RECENTLY POSTED
                 </p>
 
-                <br>
+                <h2>
+                    From the NeuroMeal Lab
+                </h2>
 
                 <p>
-                    The goal is to make complicated scientific concepts
-                    easier to understand while connecting molecular
-                    biology to the way medications actually affect
-                    the human body.
+                    Explore recent research and articles covering
+                    neuroscience, pharmacology, biology, and food.
                 </p>
+
+            </div>
+
+
+            <div class="article-grid">
+
+
+                <!-- ARTICLE 1 -->
+
+                <article class="article-card">
+
+                    <div class="article-category">
+                        PHARMACOLOGY
+                    </div>
+
+                    <h3>
+                        Why Grapefruit Can Interact With Medications
+                    </h3>
+
+                    <p>
+                        How compounds in grapefruit can interfere with
+                        drug metabolism and change medication exposure.
+                    </p>
+
+                    <a href="articles.html" class="read-more">
+                        Read article →
+                    </a>
+
+                </article>
+
+
+                <!-- ARTICLE 2 -->
+
+                <article class="article-card">
+
+                    <div class="article-category">
+                        NEUROSCIENCE
+                    </div>
+
+                    <h3>
+                        How Medications Cross the Blood-Brain Barrier
+                    </h3>
+
+                    <p>
+                        An introduction to one of the body's most important
+                        defenses—and one of pharmacology's biggest challenges.
+                    </p>
+
+                    <a href="articles.html" class="read-more">
+                        Read article →
+                    </a>
+
+                </article>
+
+
+                <!-- ARTICLE 3 -->
+
+                <article class="article-card">
+
+                    <div class="article-category">
+                        BIOLOGY
+                    </div>
+
+                    <h3>
+                        What Does Drug Metabolism Actually Mean?
+                    </h3>
+
+                    <p>
+                        Your body doesn't simply absorb a medication and
+                        leave it alone. Here's what happens afterward.
+                    </p>
+
+                    <a href="articles.html" class="read-more">
+                        Read article →
+                    </a>
+
+                </article>
+
+
+            </div>
+
+            <div class="center-button">
+
+                <a href="articles.html" class="button secondary-button">
+                    View All Articles
+                </a>
 
             </div>
 
         </section>
 
 
-        <div class="disclaimer">
+        <!-- MEDICATION DATABASE INTRO -->
 
-            <strong>Educational Disclaimer:</strong>
+        <section class="database-preview">
 
-            NeuroMeal is an educational resource and does not provide
-            medical advice. Information presented on this website should
-            not be used to make decisions about starting, stopping, or
-            changing medication. Always consult a qualified healthcare
-            professional and official medication information for
-            personal medical questions.
+            <div class="database-content">
 
-        </div>
+                <p class="eyebrow">
+                    THE DATABASE
+                </p>
+
+                <h2>
+                    What are you taking?
+                </h2>
+
+                <p>
+                    Search for a medication to explore documented food
+                    interactions and learn the biology behind them.
+                </p>
+
+                <a href="medications.html" class="button primary-button">
+                    Explore Medications
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- EDUCATIONAL APPROACH -->
+
+        <section class="levels-section">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    LEARN AT YOUR LEVEL
+                </p>
+
+                <h2>
+                    From simple to scientific.
+                </h2>
+
+                <p>
+                    NeuroMeal breaks complicated pharmacology into
+                    understandable layers.
+                </p>
+
+            </div>
+
+
+            <div class="level-grid">
+
+                <div class="level-card">
+
+                    <span class="level-number">01</span>
+
+                    <h3>
+                        The Simple Version
+                    </h3>
+
+                    <p>
+                        A straightforward explanation that doesn't
+                        require a biology background.
+                    </p>
+
+                </div>
+
+
+                <div class="level-card">
+
+                    <span class="level-number">02</span>
+
+                    <h3>
+                        The Biology
+                    </h3>
+
+                    <p>
+                        Explore enzymes, cells, receptors, transporters,
+                        and physiological processes.
+                    </p>
+
+                </div>
+
+
+                <div class="level-card">
+
+                    <span class="level-number">03</span>
+
+                    <h3>
+                        The Deep Dive
+                    </h3>
+
+                    <p>
+                        Go further into pharmacokinetics, molecular
+                        mechanisms, metabolism, and neuroscience.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
 
 
-    <footer>
+    <!-- FOOTER -->
 
-        <p>NeuroMeal © 2026</p>
+    <footer class="site-footer">
 
-        <p>Food × Medicine × Neuroscience</p>
+        <div class="footer-logo">
+            NeuroMeal
+        </div>
+
+        <p>
+            Food × Medicine × Neuroscience
+        </p>
+
+        <p class="footer-small">
+            An independent educational project.
+        </p>
 
     </footer>
 
