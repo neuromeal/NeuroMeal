@@ -1,0 +1,949 @@
+/* =========================================
+   NEUROMEAL
+   Global Styles
+   ========================================= */
+
+
+/* ---------- BASIC RESET ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #f6f8f6;
+
+    color: #25342d;
+
+    line-height: 1.7;
+}
+
+
+/* ---------- HEADER ---------- */
+
+.site-header {
+    width: 100%;
+
+    padding: 20px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid #dfe7e1;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+}
+
+
+.logo {
+    color: #315c4b;
+
+    text-decoration: none;
+
+    font-size: 27px;
+
+    font-weight: 750;
+
+    letter-spacing: -0.8px;
+}
+
+
+.navigation {
+    display: flex;
+
+    gap: 28px;
+}
+
+
+.navigation a {
+    color: #53645b;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+
+.navigation a:hover,
+.navigation a.active {
+    color: #315c4b;
+}
+
+
+/* ---------- GENERAL ---------- */
+
+main {
+    min-height: 70vh;
+}
+
+
+section {
+    padding: 90px 8%;
+}
+
+
+.eyebrow {
+    color: #5d816f;
+
+    font-size: 12px;
+
+    font-weight: 750;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+
+.section-heading {
+    max-width: 700px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+
+.section-heading h2 {
+    color: #294b3e;
+
+    font-size: 39px;
+
+    line-height: 1.2;
+
+    margin-bottom: 15px;
+
+    letter-spacing: -1px;
+}
+
+
+.section-heading p:not(.eyebrow) {
+    color: #64736c;
+
+    font-size: 17px;
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+.button {
+    display: inline-block;
+
+    padding: 13px 23px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: 650;
+
+    font-size: 15px;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+
+.primary-button {
+    background: #315c4b;
+
+    color: white;
+}
+
+
+.primary-button:hover {
+    background: #264b3c;
+}
+
+
+.secondary-button {
+    background: white;
+
+    color: #315c4b;
+
+    border: 1px solid #cbd9d1;
+}
+
+
+.secondary-button:hover {
+    background: #edf3ef;
+}
+
+
+/* ---------- HERO ---------- */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(160, 194, 177, 0.25),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(190, 211, 198, 0.25),
+            transparent 35%
+        ),
+
+        #eef4f0;
+}
+
+
+.hero-content {
+    max-width: 850px;
+}
+
+
+.hero h1 {
+    font-size: clamp(60px, 10vw, 100px);
+
+    color: #315c4b;
+
+    letter-spacing: -5px;
+
+    line-height: 1;
+
+    margin-bottom: 20px;
+}
+
+
+.hero h2 {
+    font-size: clamp(22px, 3vw, 31px);
+
+    font-weight: 450;
+
+    color: #52675d;
+
+    margin-bottom: 22px;
+}
+
+
+.hero-description {
+    max-width: 650px;
+
+    margin: 0 auto 35px;
+
+    color: #65756c;
+
+    font-size: 18px;
+}
+
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+/* ---------- ARTICLES ---------- */
+
+.articles-section {
+    background: #f6f8f6;
+}
+
+
+.article-grid {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.article-card {
+    background: white;
+
+    border: 1px solid #dfe7e1;
+
+    border-radius: 14px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 5px 20px rgba(30, 60, 45, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.article-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 30px rgba(30, 60, 45, 0.08);
+}
+
+
+.article-category {
+    color: #5c806d;
+
+    font-size: 11px;
+
+    font-weight: 750;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 12px;
+}
+
+
+.article-card h3 {
+    color: #2d4f41;
+
+    font-size: 21px;
+
+    line-height: 1.35;
+
+    margin-bottom: 12px;
+}
+
+
+.article-card p {
+    color: #68766f;
+
+    font-size: 15px;
+
+    margin-bottom: 22px;
+}
+
+
+.read-more {
+    color: #315c4b;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+
+.center-button {
+    text-align: center;
+
+    margin-top: 45px;
+}
+
+
+/* ---------- DATABASE PREVIEW ---------- */
+
+.database-preview {
+    text-align: center;
+
+    background: #315c4b;
+
+    color: white;
+}
+
+
+.database-content {
+    max-width: 700px;
+
+    margin: auto;
+}
+
+
+.database-preview .eyebrow {
+    color: #b9d1c4;
+}
+
+
+.database-preview h2 {
+    font-size: 43px;
+
+    margin-bottom: 15px;
+}
+
+
+.database-preview p {
+    color: #d8e5de;
+
+    font-size: 17px;
+
+    margin-bottom: 30px;
+}
+
+
+.database-preview .primary-button {
+    background: white;
+
+    color: #315c4b;
+}
+
+
+/* ---------- LEARNING LEVELS ---------- */
+
+.levels-section {
+    background: #edf3ef;
+}
+
+
+.level-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.level-card {
+    background: white;
+
+    padding: 32px;
+
+    border-radius: 14px;
+
+    border: 1px solid #dce6df;
+}
+
+
+.level-number {
+    display: block;
+
+    color: #80a493;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    margin-bottom: 15px;
+}
+
+
+.level-card h3 {
+    color: #315c4b;
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+
+.level-card p {
+    color: #68766f;
+
+    font-size: 15px;
+}
+
+
+/* ---------- PAGE HEADERS ---------- */
+
+.page-header {
+    text-align: center;
+
+    background: #edf3ef;
+
+    padding: 100px 8% 80px;
+}
+
+
+.page-header h1 {
+    color: #315c4b;
+
+    font-size: clamp(45px, 7vw, 70px);
+
+    letter-spacing: -2px;
+
+    line-height: 1.1;
+
+    margin-bottom: 15px;
+}
+
+
+.page-header > p:last-child {
+    color: #64736c;
+
+    max-width: 650px;
+
+    margin: auto;
+
+    font-size: 18px;
+}
+
+
+/* ---------- SEARCH ---------- */
+
+.article-library,
+.medication-search {
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+.search-container {
+    max-width: 700px;
+
+    margin: 0 auto 45px;
+}
+
+
+.search-container label {
+    display: block;
+
+    color: #315c4b;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+
+.search-container input {
+    width: 100%;
+
+    padding: 16px 18px;
+
+    border: 1px solid #cbd9d1;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #25342d;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+
+.search-container input:focus {
+    border-color: #6c9a84;
+
+    box-shadow:
+        0 0 0 3px rgba(108, 154, 132, 0.12);
+}
+
+
+.no-results {
+    display: none;
+
+    text-align: center;
+
+    color: #68766f;
+
+    margin-top: 40px;
+}
+
+
+/* ---------- MEDICATIONS ---------- */
+
+.medication-search {
+    padding-top: 70px;
+
+    padding-bottom: 30px;
+}
+
+
+.medication-options {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+.medication-options button {
+    padding: 10px 17px;
+
+    background: white;
+
+    border: 1px solid #cbd9d1;
+
+    color: #315c4b;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.medication-options button:hover {
+    background: #edf3ef;
+}
+
+
+.medication-result {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding-top: 40px;
+
+    padding-bottom: 100px;
+}
+
+
+.empty-state {
+    text-align: center;
+
+    padding: 70px 20px;
+
+    color: #65756c;
+}
+
+
+.empty-icon {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+
+.empty-state h2 {
+    color: #315c4b;
+
+    margin-bottom: 10px;
+}
+
+
+.medication-header {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+
+.medication-header h2 {
+    font-size: 48px;
+
+    color: #315c4b;
+
+    line-height: 1.1;
+}
+
+
+.medication-class {
+    color: #6c7c73;
+
+    font-size: 16px;
+}
+
+
+.information-level {
+    background: white;
+
+    border: 1px solid #dce6df;
+
+    border-radius: 14px;
+
+    padding: 32px;
+
+    margin-bottom: 20px;
+}
+
+
+.information-level h3 {
+    color: #315c4b;
+
+    font-size: 23px;
+
+    margin-bottom: 12px;
+}
+
+
+.information-level p {
+    color: #5f7067;
+}
+
+
+.level-label {
+    display: block;
+
+    color: #71917f;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 9px;
+}
+
+
+.simple-level {
+    border-left: 4px solid #7ea58f;
+}
+
+
+.deep-level {
+    border-left: 4px solid #526d60;
+}
+
+
+.interaction-note {
+    background: #fffdf4;
+
+    border: 1px solid #ebe3c7;
+
+    border-radius: 14px;
+
+    padding: 30px;
+
+    margin-top: 30px;
+}
+
+
+.interaction-note h3 {
+    color: #655e42;
+
+    margin-bottom: 10px;
+}
+
+
+.interaction-note p {
+    color: #706a53;
+}
+
+
+.source-placeholder {
+    margin-top: 35px;
+
+    padding: 25px 0;
+
+    border-top: 1px solid #dce6df;
+
+    color: #66756d;
+}
+
+
+.source-placeholder h3 {
+    color: #315c4b;
+
+    margin-bottom: 8px;
+}
+
+
+/* ---------- ABOUT ---------- */
+
+.about-page {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+
+.about-block {
+    margin-bottom: 60px;
+}
+
+
+.about-block h2 {
+    color: #315c4b;
+
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+
+.about-block p {
+    color: #5f7067;
+
+    margin-bottom: 15px;
+
+    font-size: 17px;
+}
+
+
+.disclaimer-box {
+    padding: 30px;
+
+    background: #fffdf4;
+
+    border: 1px solid #ebe3c7;
+
+    border-radius: 14px;
+}
+
+
+.disclaimer-box h2 {
+    color: #655e42;
+
+    margin-bottom: 12px;
+}
+
+
+.disclaimer-box p {
+    color: #706a53;
+
+    margin-bottom: 12px;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.site-footer {
+    background: #24332c;
+
+    color: #dce6df;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+
+.footer-logo {
+    font-size: 24px;
+
+    font-weight: 750;
+
+    margin-bottom: 5px;
+}
+
+
+.site-footer p {
+    color: #c2d0c8;
+
+    font-size: 14px;
+}
+
+
+.site-footer .footer-small {
+    color: #8fa097;
+
+    font-size: 12px;
+
+    margin-top: 8px;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 800px) {
+
+    .site-header {
+        flex-direction: column;
+
+        gap: 14px;
+
+        padding: 18px 5%;
+    }
+
+
+    .navigation {
+        gap: 16px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    .navigation a {
+        font-size: 14px;
+    }
+
+
+    section {
+        padding: 70px 6%;
+    }
+
+
+    .hero {
+        min-height: 600px;
+    }
+
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+
+    .article-grid,
+    .level-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .database-preview h2 {
+        font-size: 35px;
+    }
+
+
+    .medication-header h2 {
+        font-size: 38px;
+    }
+
+}
