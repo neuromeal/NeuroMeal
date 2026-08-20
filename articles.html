@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Articles | NeuroMeal</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header class="site-header">
+
+        <a href="index.html" class="logo">
+            NeuroMeal
+        </a>
+
+        <nav class="navigation">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="articles.html" class="active">
+                Articles
+            </a>
+
+            <a href="medications.html">
+                Medications
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- PAGE HEADER -->
+
+        <section class="page-header">
+
+            <p class="eyebrow">
+                THE NEUROMEAL ARCHIVE
+            </p>
+
+            <h1>
+                Articles
+            </h1>
+
+            <p>
+                Research, explanations, and deep dives into food,
+                medicine, biology, and neuroscience.
+            </p>
+
+        </section>
+
+
+        <!-- SEARCH -->
+
+        <section class="article-library">
+
+            <div class="search-container">
+
+                <label for="articleSearch">
+                    Search the NeuroMeal archive
+                </label>
+
+                <input
+                    type="search"
+                    id="articleSearch"
+                    placeholder="Search articles..."
+                >
+
+            </div>
+
+
+            <!-- ARTICLES -->
+
+            <div class="article-grid" id="articleList">
+
+
+                <article
+                    class="article-card searchable-article"
+                    data-search="grapefruit medications pharmacology metabolism cyp3a4 food drug interactions"
+                >
+
+                    <div class="article-category">
+                        PHARMACOLOGY
+                    </div>
+
+                    <h3>
+                        Why Grapefruit Can Interact With Medications
+                    </h3>
+
+                    <p>
+                        How compounds in grapefruit can influence enzymes
+                        involved in medication metabolism.
+                    </p>
+
+                    <a href="#" class="read-more">
+                        Read article →
+                    </a>
+
+                </article>
+
+
+                <article
+                    class="article-card searchable-article"
+                    data-search="blood brain barrier neuroscience medications brain pharmacology"
+                >
+
+                    <div class="article-category">
+                        NEUROSCIENCE
+                    </div>
+
+                    <h3>
+                        How Medications Cross the Blood-Brain Barrier
+                    </h3>
+
+                    <p>
+                        Why reaching the brain is one of the biggest
+                        challenges in neuroscience and pharmacology.
+                    </p>
+
+                    <a href="#" class="read-more">
+                        Read article →
+                    </a>
+
+                </article>
+
+
+                <article
+                    class="article-card searchable-article"
+                    data-search="drug metabolism pharmacology liver enzymes biology"
+                >
+
+                    <div class="article-category">
+                        BIOLOGY
+                    </div>
+
+                    <h3>
+                        What Does Drug Metabolism Actually Mean?
+                    </h3>
+
+                    <p>
+                        Learn how the body chemically processes medications
+                        after they enter the body.
+                    </p>
+
+                    <a href="#" class="read-more">
+                        Read article →
+                    </a>
+
+                </article>
+
+
+                <article
+                    class="article-card searchable-article"
+                    data-search="neurotransmitters serotonin antidepressants neuroscience brain"
+                >
+
+                    <div class="article-category">
+                        NEUROSCIENCE
+                    </div>
+
+                    <h3>
+                        Serotonin: More Complicated Than You Think
+                    </h3>
+
+                    <p>
+                        An introduction to serotonin signaling and why
+                        oversimplifying neurotransmitters can be misleading.
+                    </p>
+
+                    <a href="#" class="read-more">
+                        Read article →
+                    </a>
+
+                </article>
+
+
+                <article
+                    class="article-card searchable-article"
+                    data-search="caffeine medication stimulant adenosine neuroscience"
+                >
+
+                    <div class="article-category">
+                        NEUROSCIENCE
+                    </div>
+
+                    <h3>
+                        Caffeine and the Brain
+                    </h3>
+
+                    <p>
+                        How caffeine interacts with adenosine signaling
+                        and changes neural activity.
+                    </p>
+
+                    <a href="#" class="read-more">
+                        Read article →
+                    </a>
+
+                </article>
+
+
+                <article
+                    class="article-card searchable-article"
+                    data-search="calcium medication absorption food pharmacology"
+                >
+
+                    <div class="article-category">
+                        FOOD & DRUGS
+                    </div>
+
+                    <h3>
+                        When Food Changes Drug Absorption
+                    </h3>
+
+                    <p>
+                        Why the presence of food in your digestive system
+                        can sometimes affect how much medication is absorbed.
+                    </p>
+
+                    <a href="#" class="read-more">
+                        Read article →
+                    </a>
+
+                </article>
+
+
+            </div>
+
+
+            <p id="noResults" class="no-results">
+                No articles found. Try another search.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="footer-logo">
+            NeuroMeal
+        </div>
+
+        <p>
+            Food × Medicine × Neuroscience
+        </p>
+
+        <p class="footer-small">
+            An independent educational project.
+        </p>
+
+    </footer>
+
+
+    <!-- SEARCH SCRIPT -->
+
+    <script>
+
+        const searchInput =
+            document.getElementById("articleSearch");
+
+        const articles =
+            document.querySelectorAll(".searchable-article");
+
+        const noResults =
+            document.getElementById("noResults");
+
+
+        searchInput.addEventListener("input", function () {
+
+            const searchTerm =
+                searchInput.value.toLowerCase().trim();
+
+            let visibleArticles = 0;
+
+
+            articles.forEach(function (article) {
+
+                const searchableText =
+                    article.dataset.search.toLowerCase();
+
+                if (searchableText.includes(searchTerm)) {
+
+                    article.style.display = "block";
+
+                    visibleArticles++;
+
+                } else {
+
+                    article.style.display = "none";
+
+                }
+
+            });
+
+
+            if (visibleArticles === 0) {
+
+                noResults.style.display = "block";
+
+            } else {
+
+                noResults.style.display = "none";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
